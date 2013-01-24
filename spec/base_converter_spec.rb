@@ -14,6 +14,18 @@ describe BaseConverter do
     end
 
     it 'converts from base 10 to base 2' do
+      number = BaseConverter.new.convert 1, 2
+
+      number.must_equal 1
+    end
+
+    it 'converts from base 10 to base 2' do
+      number = BaseConverter.new.convert 2, 2
+
+      number.must_equal 10
+    end
+
+    it 'converts from base 10 to base 2' do
       number = BaseConverter.new.convert @number, 2
 
       number.must_equal 1010010001010101

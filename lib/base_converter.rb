@@ -11,7 +11,8 @@ class BaseConverter
   private
 
   def find_first_power_of_base_more_than_number number, base
-    until base**@power >= number
+    return @power = 1 if number == 0
+    until base**@power > number
       @power += 1
     end
   end
