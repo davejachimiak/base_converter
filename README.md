@@ -6,5 +6,5 @@ to\_s message on a base 10 number. e.g.:
 
 ```ruby
 2.to_s 2
-# => 10
+# => '10'
 ```
