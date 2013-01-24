@@ -6,6 +6,7 @@ class BaseConverter
   end
 
   def convert number, base
+    raise UnconvertableError if base > 36
     find_first_power_of_base_more_than_number number, base
     concatenate_digits number, base
   end
@@ -32,3 +33,5 @@ class BaseConverter
     LETTERS[result - 10]
   end
 end
+
+class UnconvertableError < StandardError; end
