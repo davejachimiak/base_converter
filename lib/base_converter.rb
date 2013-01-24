@@ -1,4 +1,6 @@
 class BaseConverter
+  LETTERS = %{abcdefghijklmnopqrstuvwxyz}
+
   def initialize
     @power = 0
   end
@@ -21,7 +23,12 @@ class BaseConverter
     (0..@power - 1).to_a.reverse.inject('') do |memo, power|
       result = number/(base**power)
       number -= result*(base**power)
+      result = convert_to_letter result if result > 9
       memo += result.to_s
-    end.to_i
+    end
+  end
+
+  def convert_to_letter result
+    LETTERS[result - 10]
   end
 end
